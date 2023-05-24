@@ -1,0 +1,19 @@
+{% extends 'common.html' %}
+    {% block body %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="{{value.img.url}}" alt="image" width="400" height="300">
+                </div>
+                <div class="col-sm-4">
+                    <h3>{{value.name}}</h3>
+                    <p style="text-align:justify">{{value.desc}}</p>
+                    <br>
+                </div>
+                <div class="col-sm-4">
+                    <a class="btn btn-primary" href="{% url 'movie:update' value.id %}">EDIT</a>
+                    <a class="btn btn-success" href="{% url 'movie:delete' value.id %}">DELETE</a>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
